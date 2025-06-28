@@ -1,59 +1,75 @@
-# BahiainglesaNg
+# FULLSTACK II SEMANA 3 PORTAL BAHÍA INGLESA 
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+<p align="center">
+  <img src="img/logo_bahia.png" alt="Logo" width="250">
+</p>
 
-## Development server
+<div style="text-align:center;">
+  Bahía Inglesa, el verano se vive la Región de Atacama!
+</div>
 
-To start a local development server, run:
+## Descripción de la Actividad
+En esta tercera semana tendrán que realizar la actividad sumativa de la Experiencia 1 de esta asignatura mediante dos instancias. Para la primera parte de manera individual deberán desarrollar y presentar la interfaz gráfica de la temática elegida previamente, tomando en consideración las categorías y reglas generales indicadas por el docente. Para la segunda parte deberán grabar un video mencionando las características asociadas a su tema.
 
-```bash
-ng serve
-```
+## Objetivos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Parte I: Documentación 
 
-## Code scaffolding
+1.	Deberán entregar en un archivo comprimido (.rar o .zip) la aplicación creada. El comprimido deberá contener el código fuente de la aplicación.
+2.	La aplicación FrontEnd creada debe cumplir con los siguientes aspectos: 
+- a.	La interfaz gráfica desarrollada debe adaptarse a mínimo 3 tamaños de pantallas diferentes para su correcta visualización en dispositivos móviles basada en el GRID de 12 columnas.
+- b.	Uso de HTML, CSS, Bootstrap y JS para la construcción del front-end en sus versiones más actuales.
+- c.	Manejo y organización del trabajo grupal utilizando herramientas colaborativas y de repositorios en GIT.
+- d.	Deberán estar construidas todas las pantallas y los formularios con sus respectivas validaciones (para ello, deben considerar la aplicación del caso seleccionado). 
+3.	Para la creación de la aplicación FrontEnd deberán tener en cuenta lo siguiente: 
+- a.	Considerar un caso que sea de su interés y que sea aprobado por todos los integrantes del equipo. 
+- b.	Para delimitar su aplicación y el alcance de esta
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##	Todas deben contar con las siguientes páginas:  
+-	Inicio de sesión. 
+-	Registro de usuarios. 
+-	Recuperar contraseña.  
+-	Modificación de perfil.  
+-	Adicionalmente, deberás generar páginas internas para dar respuesta a las funcionalidades del sistema dependiendo del tema elegido (se dan más detalles en el apartado de temáticas). 
+-	En cuanto a las contraseñas, se deberán proporcionar al menos 4 validaciones de seguridad de estas para protección tales como longitud mínima, uso de caracteres especiales, uso de números y letras, longitud máxima o alguna otra que considere esencial. 
+-	En cuanto a los formularios, todos deben tener sus validaciones correspondientes para cada campo, puede guiarse de cualquier aplicación donde se haya registrado para usar las 
+validaciones necesarias. 
 
-```bash
-ng generate component component-name
-```
+## Parte II: Presentación.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Para cumplir con el producto de la segunda parte de la evaluación deberás realizar la presentación de tu aplicación mediante la grabación de un video con la herramienta de Kaltura, mostrando la ejecución y explicando el funcionamiento en tiempo real, características, diseño, funcionalidades y navegando entre todas las opciones de la aplicación incluyendo todo lo solicitado en el punto 2 (tanto su código como su ejecución).
 
-```bash
-ng generate --help
-```
+## Nombre del proyecto
+- Portal Web Bahía Inglesa, noticias y gestión de anuncios
 
-## Building
+## Roles
+- Administrador (ADMIN)
+- Usuario (USER)
 
-To build the project run:
+## Acceso
 
-```bash
-ng build
-```
+- admin@bahiainglesa.cl (123456)
+- usuario@gmail.com (123456)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Servicios de Anuncios
 
-## Running unit tests
+- Restaurant
+- Eventos
+- Tour
+- Alojamiento
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Stack Utilizado
+- HTML
+- Javascript
+- Css
+- Logo Genspark
+- Visual Studio Code
+- Extenciones Live Preview Microsoft
+- Bootstrap 5.3
+- Fontawesome 6.7.2
 
-```bash
-ng test
-```
+## Git y Trello
+- Los links relacionados se comparten en AVA
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Conclusiones
+El ejercicio cumple satisfactoriamente con los objetivos planteados en la tarea, los datos son ficticios y no son almacenados en algún tipo de base de datos.
