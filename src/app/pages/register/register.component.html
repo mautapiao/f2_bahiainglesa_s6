@@ -1,0 +1,62 @@
+<!-- Main  -->
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-4">
+    <div class="row justify-content-center w-100"> <!-- w-100 para que ocupe el ancho disponible -->
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5"> <!-- Ajusta columnas para controlar el ancho -->
+
+            <div class="card shadow login-card">
+                <div class="card-body p-4">
+                    <h3 class="text-center text-secondary mb-4">Crear Cuenta</h3>
+
+                    <div id="alertSuccess" class="alert alert-success d-none" role="alert">
+                        Formulario enviado con exito!
+                    </div>
+
+                    <form id="registroForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombreCompleto" required>
+                            <div class="invalid-feedback">
+                                Por favor ingrese su nombre completo.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" required>
+                            <div class="invalid-feedback">
+                                Por favor ingrese correo valido.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="contrasena" required>
+                            <div class="form-text">
+                                Entre 6-18 caracteres, al menos 1 número y 1 mayúscula.
+                            </div>
+                            <div class="invalid-feedback">
+                                La contraseña debe tener entre 6-18 caracteres, al menos un número y una
+                                letra mayúscula.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="confirmarContrasena" required>
+                            <div class="invalid-feedback">
+                                Las contraseñas no coinciden.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <img src="img/recaptcha.png" class="img-fluid" alt="reCAPTCHA">
+                        </div>
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </div>
+                        <div class="text-center">
+                            <a [routerLink]="'/auth/login'" class="small text-decoration-none text-secondary">¿Ya tienes
+                                cuenta? Inicia sesión</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
