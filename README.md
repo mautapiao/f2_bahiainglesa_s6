@@ -1,7 +1,7 @@
 # FULLSTACK II SEMANA 3 PORTAL BAHÍA INGLESA 
 
 <p align="center">
-  <img src="img/logo_bahia.png" alt="Logo" width="250">
+  <img src="public/img/logo_bahia.png" alt="Logo" width="250">
 </p>
 
 <div style="text-align:center;">
