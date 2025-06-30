@@ -1,0 +1,46 @@
+<!-- Main  -->
+<div class="container min-vh-100 d-flex align-items-center justify-content-center mb-4 py-4" style="margin-top: 76px;">
+    <div class="card">
+        <div class="card-header">
+            Gestión de Usuarios
+        </div>
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Usuario</th>
+                            <th>Nombre Completo</th>
+                            <th>Rol</th>
+                            <th>Fecha Alta</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of usuarios">
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.fullName }}</td>
+                            <td>
+                                <span class="badge" [ngClass]="user.roleClass">{{ user.role }}</span>
+                            </td>
+                            <td>{{ user.createdAt }}</td>
+                            <td>
+                                <span class="badge" [ngClass]="user.statusClass">{{ user.status }}</span>
+                            </td>
+                            <td>
+                                <a [href]="user.profileLink" class="btn btn-outline-secondary btn-sm">Editar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

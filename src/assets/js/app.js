@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   
-
-
+/*
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -18,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
+*/
 
 // Añadir efecto de desplazamiento a la barra de navegación
 window.addEventListener('scroll', function () {

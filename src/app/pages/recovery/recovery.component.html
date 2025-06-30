@@ -6,30 +6,18 @@
                 <div class="card shadow login-card">
 
                     <div class="card-body p-4">
+
                         <h3 class="text-center text-secondary mb-4">Recuperar Contraseña</h3>
 
-                        <div class="alert alert-warning fade d-none text-center" role="alert" id="alert">
-
-                            Enviando link de recuperación
-
-                            <br>
-
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="visually-hidden">Enviando...</span>
-                            </div>
-                        </div>
-
-                        <div class="alert alert-success fade d-none text-center" role="alert" id="alertCheck">
-
-                            <i class="fa-regular fa-circle-check"></i> Revise su correo electrónico
-
-                        </div>
-
-
-                        <form id="frmRecuperar">
+                        <form [formGroup]="formRecovery" (ngSubmit)="onSubmit()">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" [class.is-invalid]="formRecovery.get('email')?.invalid && formRecovery.get('email')?.touched"
+                                id="email" formControlName="email">
+                                <div class="invalid-feedback"
+                                *ngIf="formRecovery.get('email')?.invalid && formRecovery.get('email')?.touched|| submitted">
+                                Por favor ingrese su email.
+                            </div>
                             </div>
 
                             <div class="d-grid mb-3">

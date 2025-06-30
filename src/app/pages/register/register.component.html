@@ -7,49 +7,57 @@
                 <div class="card-body p-4">
                     <h3 class="text-center text-secondary mb-4">Crear Cuenta</h3>
 
-                    <div id="alertSuccess" class="alert alert-success d-none" role="alert">
-                        Formulario enviado con exito!
-                    </div>
-
-                    <form id="registroForm" class="needs-validation" novalidate>
+                    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
                             <label class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombreCompleto" required>
-                            <div class="invalid-feedback">
-                                Por favor ingrese su nombre completo.
+                            <input type="text" class="form-control"
+                                [class.is-invalid]="formRegister.get('nombreCompleto')?.invalid && formRegister.get('nombreCompleto')?.touched"
+                                id="nombreCompleto" formControlName="nombreCompleto">
+                            <div class="invalid-feedback"
+                                *ngIf="formRegister.get('nombreCompleto')?.invalid && formRegister.get('nombreCompleto')?.touched|| submitted">
+                                Por favor ingrese su nombre completo
                             </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="correo" required>
-                            <div class="invalid-feedback">
-                                Por favor ingrese correo valido.
+                            <input type="email" class="form-control" id="email"
+                                [class.is-invalid]="formRegister.get('email')?.invalid && formRegister.get('email')?.touched"
+                                formControlName="email">
+                            <div class="invalid-feedback"
+                                *ngIf="formRegister.get('email')?.invalid && formRegister.get('email')?.touched|| submitted">
+                                Por favor ingrese su correo
                             </div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="contrasena" required>
-                            <div class="form-text">
-                                Entre 6-18 caracteres, al menos 1 número y 1 mayúscula.
-                            </div>
-                            <div class="invalid-feedback">
+                            <input type="password" class="form-control"
+                                [class.is-invalid]="formRegister.get('password')?.invalid && (formRegister.get('password')?.touched || submitted)"
+                                formControlName="password">
+                            <div class="invalid-feedback"
+                                *ngIf="formRegister.get('password')?.invalid && (formRegister.get('password')?.touched || submitted)">
                                 La contraseña debe tener entre 6-18 caracteres, al menos un número y una
                                 letra mayúscula.
                             </div>
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label">Confirmar contraseña</label>
-                            <input type="password" class="form-control" id="confirmarContrasena" required>
-                            <div class="invalid-feedback">
+                            <input type="password" class="form-control"
+                                [class.is-invalid]="(formRegister.get('passwordConfirm')?.invalid && (formRegister.get('passwordConfirm')?.touched || submitted)) || (formRegister.errors?.['passwordsNoCoinciden'] && (formRegister.get('passwordConfirm')?.touched || submitted))"
+                                formControlName="passwordConfirm">
+                            <div class="invalid-feedback"
+                                *ngIf="formRegister.errors?.['passwordsNoCoinciden'] && (formRegister.get('passwordConfirm')?.touched || submitted)">
                                 Las contraseñas no coinciden.
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <img src="img/recaptcha.png" class="img-fluid" alt="reCAPTCHA">
-                        </div>
-                        <div class="d-grid mb-3">
+
+                        <div class="d-grid mb-2">
                             <button type="submit" class="btn btn-primary">Registrarse</button>
                         </div>
+                        <div class="d-grid mb-3">
+                            <button type="button" class="btn btn-outline-secondary" (click)="onReset()">Limpiar</button>
+                        </div>
+
                         <div class="text-center">
                             <a [routerLink]="'/auth/login'" class="small text-decoration-none text-secondary">¿Ya tienes
                                 cuenta? Inicia sesión</a>

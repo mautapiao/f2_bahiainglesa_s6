@@ -1,0 +1,49 @@
+<!-- Main -->
+<div class="container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4"
+    style="margin-top: 76px;">
+
+    <div class="card">
+        <div class="card-header">
+            Gestión de Categorías
+        </div>
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light text-secondary text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Categoría</th>
+                            <th>Tamaño</th>
+                            <th>Ubicación</th>
+                            <th>Diario</th>
+                            <th>Semanal</th>
+                            <th>Mensual</th>
+                            <th>Anual</th>
+                            <th>Descripción</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let spot of adSpots; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ spot.category }}</td>
+                            <td>{{ spot.size }}</td>
+                            <td>{{ spot.location }}</td>
+                            <td>{{ spot.dailyPrice }}</td>
+                            <td>{{ spot.weeklyPrice }}</td>
+                            <td>{{ spot.monthlyPrice }}</td>
+                            <td>{{ spot.annualPrice }}</td>
+                            <td>{{ spot.description }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-secondary">Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

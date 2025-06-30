@@ -9,6 +9,20 @@ import { AppComponent } from './app.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { ClientHomeComponent } from './components/client/home/client-home.component';
+import { AdminHomeComponent } from './components/admin/home/admin-home.component';
+import { AdscreateComponent } from './components/client/adscreate/adscreate.component';
+import { AvailablePlansComponent } from './components/client/available-plans/available-plans.component';
+import { MyAdsComponent } from './components/client/my-ads/my-ads.component';
+import { MyAccountComponent } from './components/client/my-account/my-account.component';
+import { AdminUserComponent } from './components/admin/user/admin-user.component';
+import { AdminAdsComponent } from './components/admin/ads/admin-ads.component';
+import { AdminCategoryComponent } from './components/admin/category/admin-category.component';
+import { AdminPostComponent } from './components/admin/post/admin-post.component';
+import { AdminPlansComponent } from './components/admin/plans/admin-plans.component';
+import { ContactComponent } from './components/client/contact/contact.component';
 
 export const routes: Routes = [
   // 🔒 Rutas de autenticación (sin header/sidebar)
@@ -30,7 +44,38 @@ export const routes: Routes = [
       { path: '', component: InicioComponent },
       { path: 'playas', component: PlayasComponent },
       { path: 'bienvenidos', component: BienvenidosComponent },
-      { path: 'noticias', component: NoticiasComponent }
+      { path: 'noticias', component: NoticiasComponent },
+      
     ]
-  }
+  },
+
+  // 🛠 Admin con su layout... sin guard pendiente
+  {
+    path: 'admin',
+    component: AdminLayoutComponent,
+    children: [
+      { path: 'index', component: AdminHomeComponent },
+      { path: 'users', component: AdminUserComponent},
+      { path: 'ads', component: AdminAdsComponent},
+      { path: 'categories', component: AdminCategoryComponent},
+      { path: 'posts', component: AdminPostComponent},
+      { path: 'plans', component: AdminPlansComponent}
+    ]
+  },
+
+  // ✏️ Editor con su layout y-o guard
+  {
+    path: 'cliente',
+    component: ClientLayoutComponent,
+    children: [
+      { path: 'index', component: ClientHomeComponent  },
+      { path: 'adscreate', component: AdscreateComponent  },
+      { path: 'plans', component: AvailablePlansComponent},
+      { path: 'myads', component: MyAdsComponent},
+      { path: 'myaccount', component: MyAccountComponent},
+      { path: 'contact', component: ContactComponent}
+
+    ]
+  },
+  
 ];
