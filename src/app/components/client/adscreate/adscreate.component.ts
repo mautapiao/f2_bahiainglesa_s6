@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 /**
  * Area de cliente administración de Ads
+ * Las propiedades de esta interfaz están escritas en inglés para seguir buenas prácticas,
  */
 @Component({
   selector: 'app-adscreate',
@@ -14,16 +15,19 @@ import Swal from 'sweetalert2';
 })
 export class AdscreateComponent {
   /**
-   * Definición de variables
+   * Formulario reactivo para la cuenta de usuario 
    */
   anuncioForm: FormGroup;
 
+  /**
+   * Formulario reactivo se usa para limpiar el input type file
+   */
   @ViewChild('fileInput') fileInput!: ElementRef;
+
   /**
    * Constructor 
    */
   constructor(private fb: FormBuilder) {
-
 
     /** 
      * Validación de campos formulario
@@ -49,9 +53,7 @@ export class AdscreateComponent {
 
     if (this.anuncioForm.valid) {
       console.log('Formulario enviado:', this.anuncioForm.value);
-      /**
-      * Muestra un mesaje de ingreso de ads existoso
-      */
+
       Swal.fire({
         icon: 'success',
         title: 'Registro exitoso',
@@ -70,7 +72,7 @@ export class AdscreateComponent {
         /** Limpieza de formulario */
         this.anuncioForm.reset();
         /** Limpieza de input type file */
-        this.fileInput.nativeElement.value = ''; 
+        this.fileInput.nativeElement.value = '';
 
       });
 
@@ -137,9 +139,9 @@ export class AdscreateComponent {
 
   }
 
-/**
- * Validación de fecha inicial y fecha final
- */
+  /**
+   * Validación de fecha inicial y fecha final
+   */
   fechaInicioMenorQueFin: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
     const start = group.get('startDate')?.value;
     const end = group.get('endDate')?.value;

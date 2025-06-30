@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de administración de anuncias Ads
+ * Interface que representa los ads
  */
-
 interface Ad {
+  /** id numerico autoincremento */
   id: number;
   /** Fecha de registro del anuncio */
   createdAt: string;
   /** Usuario y correo */
   user: {
+    /** nombre de usaurio */
     name: string;
+    /** email usaurio */
     email: string;
   };
   /** Categoría de anuncio */
@@ -34,13 +35,16 @@ interface Ad {
   /** Indica si el registro esta activo */
   active: boolean;
 }
-
+/**
+ * Componente para administración de ads cliente
+ */
 @Component({
   selector: 'app-admin-ads',
   imports: [RouterModule, CommonModule],
   templateUrl: './admin-ads.component.html',
   styleUrl: './admin-ads.component.scss'
 })
+
 export class AdminAdsComponent {
 
   /** Poblamiendo de los anuncios */
@@ -115,13 +119,13 @@ export class AdminAdsComponent {
     }
   ];
 
-  /** Cambia el estado del aviso Ads */
+ /**
+  * Cambia el estado activo/inactivo del anuncio.
+  * Este método podría ser conectado a una llamada a la base de datos.
+  * @param ad El anuncio cuyo estado se desea alternar.
+  */
   toggleActivo(ad: Ad): void {
     ad.active = !ad.active;
-
     // Aquí a db para persistir el cambio
-
   }
-
-
 }

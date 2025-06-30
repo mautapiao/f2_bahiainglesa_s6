@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ClientLayoutComponent } from './client-layout.component';
 
@@ -8,7 +9,7 @@ describe('ClientLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ClientLayoutComponent]
+      imports: [ClientLayoutComponent, RouterTestingModule]
     })
     .compileComponents();
 

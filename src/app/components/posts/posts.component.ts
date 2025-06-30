@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de noticias destacados en la página,
- * mostrando información dinámica sobre eventos en general.
+ * Interface que representa los post para pagina princial.
  */
-
 interface Post {
   /** Fecha de la publicación */
   fecha: string;
@@ -19,7 +16,9 @@ interface Post {
   /** Ruta a contenido de la noticia */
   ruta: string; 
 }
-
+/**
+ * Componente que muestra la sección de posts en la página principal
+ */
 @Component({
   selector: 'app-posts',
   imports: [RouterModule, CommonModule],
@@ -27,10 +26,7 @@ interface Post {
   styleUrl: './posts.component.scss'
 })
 export class PostsComponent {
-
-  /**
-   * Lista de noticias a mostrar en la sección.
-   */
+  /** Lista de noticias a mostrar en la sección */
   posts: Post[] = [
     {
       fecha: '07/06/2025',
@@ -46,7 +42,5 @@ export class PostsComponent {
       texto: 'El Ministerio de Turismo ha inaugurado una nueva ruta costera con miradores, áreas verdes y acceso a playas escondidas...',
       ruta: 'noticias'
     }
-
   ];
-
 }

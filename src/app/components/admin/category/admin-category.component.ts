@@ -3,17 +3,21 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 /**
- * Representa la sección de administración de categorias
+ * Interface que representa ulas categorias de avisos
  */
-
-/** interfaz para poblar categorías */
 interface Category {
+  /** id numerico autoincremento */
   id: number;
+  /** nombre de la categoria */ 
   name: string;
+  /** descripción de la categoría */
   description: string;
+  /** activo o no */
   isActive: boolean;
 }
-
+/**
+ * Componente que muestra las categorias del sistema para los avisos
+ */
 @Component({
   selector: 'app-admin-category',
   imports: [RouterModule, CommonModule],
@@ -21,7 +25,6 @@ interface Category {
   styleUrl: './admin-category.component.scss'
 })
 export class AdminCategoryComponent {
-
   /** Poblamiento de categorías */
   categories: Category[] = [
     {
@@ -43,6 +46,4 @@ export class AdminCategoryComponent {
       isActive: true
     }
   ];
-
-
 }

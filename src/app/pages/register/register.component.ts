@@ -14,15 +14,22 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent {
   /**
-   * Definición de variables
+   * Formulario reactivo para la cuenta de usuario 
    */
   formRegister: FormGroup;
+  /** 
+   * Bandera para saber si no coinciden las password
+   */
   noCoincide = false;
+  /** 
+   * Bandera para saber si el formualrio fue enviado
+   */
   submitted = false;
 
-  /**
-  * Constructor 
-  */
+   /**
+   * Constructor del componente
+   * @param fb Servicio FormBuilder para crear el formulario
+   */
   constructor(private fb: FormBuilder) {
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{6,18}$/;
@@ -56,7 +63,10 @@ export class RegisterComponent {
     }
   }
 
-  /** Envío de formulario */
+  /**
+   * Envío de formulario
+   * Valida los campos y muestra notificaciones usando SweetAlert2
+   */
   onSubmit() {
 
     console.log('🔥 onSubmit() se ejecutó');
@@ -64,7 +74,6 @@ export class RegisterComponent {
     this.submitted = true;
     this.formRegister.markAllAsTouched();
 
-    /** Muestra un mesaje al usuario indicando que debe completar los campo Pasar Swal a un componente */
     if (this.formRegister.invalid) {
 
       Swal.fire({
@@ -83,8 +92,6 @@ export class RegisterComponent {
       });
       return;
     }
-
-    /** Muestra un mesaje al usuario de registro existoso */
 
     Swal.fire({
       icon: 'success',
@@ -109,7 +116,9 @@ export class RegisterComponent {
     console.log(this.formRegister.value);
   }
 
-  /** Permite al usuario limpiar el formulario */
+   /**
+   * Limpia el formulario
+   */
   onReset() {
     Swal.fire({
       title: '¿Limpiar el formulario?',
@@ -130,7 +139,6 @@ export class RegisterComponent {
         this.formRegister.reset();
         this.submitted = false;
 
-        /** Envia un toast al usuario */
         Swal.fire({
           title: 'Formulario limpio',
           icon: 'success',

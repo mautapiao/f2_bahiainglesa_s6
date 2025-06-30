@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { AdminCategoryComponent } from './admin-category.component';
 
 describe('AdminCategoryComponent', () => {
@@ -8,7 +8,7 @@ describe('AdminCategoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminCategoryComponent]
+      imports: [AdminCategoryComponent, RouterTestingModule]
     })
     .compileComponents();
 

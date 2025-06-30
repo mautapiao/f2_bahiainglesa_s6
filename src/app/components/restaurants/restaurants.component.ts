@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /**
- * Representa la sección de restaurantes recomendados en la página principal.
+ * Interface que representa la lista de restaurantes en la sección principal
  */
 interface Restaurante {
+  /** nombre del restaurant */
   nombre: string;
+  /** descripcion del servicio */
   descripcion: string;
+  /** ciudad restaurant */
   ciudad: string;
+  /** imagen local */
   imagen: string;
+  /** link instagram */
   instagram: string;
 }
-
+/**
+ * Componente que muestra la sección de restaurantes destacados en la página principal
+ */
 @Component({
   selector: 'app-restaurants',
   imports: [CommonModule],
@@ -18,9 +25,7 @@ interface Restaurante {
   styleUrl: './restaurants.component.scss'
 })
 export class RestaurantsComponent {
-  /**
-   * Lista de restaurantes destacados para mostrar en la sección.
-   */
+  /** Lista de restaurantes destacados para mostrar en la sección */
   restaurantes: Restaurante[] = [
     {
       nombre: 'El Plateao',
@@ -37,5 +42,4 @@ export class RestaurantsComponent {
       instagram: 'https://www.instagram.com/coraldebahia/?hl=es'
     }
   ];
-  
 }

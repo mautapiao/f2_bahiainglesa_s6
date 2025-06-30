@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de avisos columna derecha en la página,
- * mostrando información dinámica sobre publicidad para empresas y emprendimientos.
+ * Interface que representa la sección de avisos columna derecha
  */
-
 export interface Hospedaje {
   /** Nombre Item */
   nombre: string;
@@ -31,7 +28,9 @@ export interface Hospedaje {
   /** Detalle oferta */
   detalleOferta?: string;
 }
-
+/**
+ * Componente que muestra la sección columna derecha en la página principal
+ */
 @Component({
   selector: 'app-right-column',
   imports: [RouterModule, CommonModule],
@@ -39,9 +38,7 @@ export interface Hospedaje {
   styleUrl: './right-column.component.scss'
 })
 export class RightColumnComponent {
- /**
-  * Lista de hospedaje recomendado.
-  */
+ /** Lista de hospedaje recomendado. */
   hospedajes: Hospedaje[] = [
   {
     nombre: 'Hotel Bahia Resort',
@@ -77,6 +74,4 @@ export class RightColumnComponent {
     detalleOferta: 'Reserva 3 noches y obtén 1 gratis'
   }
 ];
-
-
 }

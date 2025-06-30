@@ -4,7 +4,7 @@ import { FormsModule, FormBuilder, FormGroup, Validators, ReactiveFormsModule, A
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 /**
- * Componente que muestra la sección de recuperar contraseña.
+ * Componente que muestra la sección de recuperar contraseña
  */
 @Component({
   selector: 'app-recovery',
@@ -14,27 +14,38 @@ import Swal from 'sweetalert2';
 })
 
 export class RecoveryComponent {
+  /**
+   * Formulario reactivo para la cuenta de usuario 
+   */
   formRecovery: FormGroup;
+  /** 
+   * Bandera para saber si el formualrio fue enviado
+   */
   submitted = false;
 
-  /* Constructor */
+  /**
+   * Constructor del componente
+   * @param fb Servicio FormBuilder para crear el formulario
+   */
   constructor(private fb: FormBuilder) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    /* Validación de correo electrónico */
+    /** Validación de correo electrónico */
     this.formRecovery = this.fb.group({
       email: ['', [Validators.required, Validators.minLength(10), Validators.pattern(emailRegex)]],
     });
   }
 
-  /* Evento envío de formulario */ 
+  /**
+   * Envío de formulario
+   * Valida los campos y muestra notificaciones usando SweetAlert2
+   */
   onSubmit() {
 
     this.submitted = true;
     this.formRecovery.markAllAsTouched();
 
-    /* si el formulario es invalido */
     if (this.formRecovery.invalid) {
-      /* muestra mensaje de alerta */
+     
       Swal.fire({
         icon: 'error',
         title: 'Formulario inválido',
@@ -53,10 +64,8 @@ export class RecoveryComponent {
       return;
     }
 
-    /* obtengo el valor del input email */
     const { email } = this.formRecovery.value;
 
-    /* muestro mesaje success */
     Swal.fire({
       icon: 'info',
       title: 'Correo enviado',

@@ -1,4 +1,3 @@
-<!-- Main  -->
 <div class="container min-vh-100 d-flex align-items-center justify-content-center mb-4 py-4" style="margin-top: 76px;">
     <div class="card">
         <div class="card-header">
@@ -34,7 +33,7 @@
                                 <span class="badge" [ngClass]="user.statusClass">{{ user.status }}</span>
                             </td>
                             <td>
-                                <a [href]="user.profileLink" class="btn btn-outline-secondary btn-sm">Editar</a>
+                                <a [routerLink]="['/admin/users/edit', user.id]" class="btn btn-outline-secondary btn-sm">Editar</a>
                             </td>
                         </tr>
                     </tbody>

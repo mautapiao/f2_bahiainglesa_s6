@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de administración de post o noticias
+ * Interface que representa los post o noticias
  */
-
-
-/** Interface para las noticias */
 interface Notice {
+  /** id numerico autoincremento */
   id: number;
+  /** titulo de la noticia */
   title: string;
+  /** descripcion noticia */
   description: string;
+  /** Activo o no */
   isActive: boolean;
 }
-
+/**
+ * Componente que muestras los post al administrador
+ */
 @Component({
   selector: 'app-admin-post',
   imports: [RouterModule,CommonModule],
@@ -22,7 +24,6 @@ interface Notice {
   styleUrl: './admin-post.component.scss'
 })
 export class AdminPostComponent {
-
   /** Carga de noticias */
   notices: Notice[] = [
     {
@@ -41,6 +42,4 @@ Este sitio está diseñado para ayudarte a planificar tu próxima escapada.
       isActive: true,
     },
   ];
-
-
 }

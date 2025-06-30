@@ -3,6 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 /**
  * Formulario de contacto uso de NgModel
+ * Las propiedades de esta interfaz están escritas en inglés para seguir buenas prácticas,
  */
 @Component({
   selector: 'app-contact',
@@ -16,18 +17,18 @@ export class ContactComponent {
   /**
   * Objeto json prueba de NgModel
   */
-  contacto = {
-    nombre: 'Usuario Cliente',
+  contact = {
+    name: 'Usuario Cliente',
     email: 'usuario@gmail.com',
-    mensaje: ''
+    menssage: ''
   };
 
   /**
   * Metodo para envío de Formulario de contacto uso de NgModel
   */
   enviarFormulario(form: NgForm) {
-    console.log('Formulario enviado:', this.contacto);
-    alert(`Gracias por escribirnos, ${this.contacto.nombre}`);
+    console.log('Formulario enviado:', this.contact);
+    alert(`Gracias por escribirnos, ${this.contact.name}`);
     /** Limpia los campor del formulario  */
     form.resetForm();
 

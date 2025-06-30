@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de avisos destacados en la página,
- * mostrando información dinámica sobre publicidad para empresas y emprendimientos.
+ * Interface que representa los avisos mostrado en la sección principal
  */
 interface Aviso {
   /** Clases para el icono FontAwesome */
@@ -18,7 +16,9 @@ interface Aviso {
   /** Estilo CSS para el header de la tarjeta */
   headerStyle: string;
 }
-
+/**
+ * Componente que muestra la sección de avisos en la página principal
+ */
 @Component({
   selector: 'app-avisos',
   imports: [RouterModule, CommonModule],
@@ -26,8 +26,7 @@ interface Aviso {
   styleUrl: './avisos.component.scss'
 })
 export class AvisosComponent {
-
-   /** Lista de avisos a mostrar en la sección. */
+  /** Lista de avisos a mostrar en la sección. */
   avisos: Aviso[] = [
     {
       icono: 'fa-regular fa-building',

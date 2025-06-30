@@ -23,6 +23,7 @@ import { AdminCategoryComponent } from './components/admin/category/admin-catego
 import { AdminPostComponent } from './components/admin/post/admin-post.component';
 import { AdminPlansComponent } from './components/admin/plans/admin-plans.component';
 import { ContactComponent } from './components/client/contact/contact.component';
+import { UserEditComponent } from './components/admin/user-edit/user-edit.component';
 
 export const routes: Routes = [
   // 🔒 Rutas de autenticación (sin header/sidebar)
@@ -59,7 +60,8 @@ export const routes: Routes = [
       { path: 'ads', component: AdminAdsComponent},
       { path: 'categories', component: AdminCategoryComponent},
       { path: 'posts', component: AdminPostComponent},
-      { path: 'plans', component: AdminPlansComponent}
+      { path: 'plans', component: AdminPlansComponent},
+      { path: 'users/edit/:id',component: UserEditComponent}
     ]
   },
 

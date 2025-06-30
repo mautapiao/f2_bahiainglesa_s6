@@ -12,10 +12,14 @@ import { filter } from 'rxjs';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  /**
+   * Constructor del componente
+   */
   constructor(private router: Router) { }
 
+  /**  Direccional menu de inicio */
   goHome(event: Event) {
+
     event.preventDefault(); // evitar recarga
 
     if (this.router.url === '/') {
@@ -30,11 +34,11 @@ export class HeaderComponent {
     }
   }
 
-  /* Realiza un scroll al inicio de la página */
+  /** Realiza un scroll al inicio de la página */
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  /* Realiza un scrol a la sección */
+  /** Realiza un scrol a la sección */
   scrollToSection(sectionId: string): void {
 
     const element = document.getElementById(sectionId);

@@ -5,7 +5,8 @@ import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 
 /**
- * Area de cliente administración de su perfil o cuenta
+ * Componente para la cuenta de usuario
+ * Permite al usaurio actualizar sus datos personales
  */
 @Component({
   selector: 'app-my-account',
@@ -13,14 +14,22 @@ import Swal from 'sweetalert2';
   templateUrl: './my-account.component.html',
   styleUrl: './my-account.component.scss'
 })
-export class MyAccountComponent {
 
+export class MyAccountComponent {
   /**
-  * Definición de variables
-  */
+   * Formulario reactivo para la cuenta de usuario 
+   */
   formAccount: FormGroup;
+
+  /** 
+   * Bandera para saber si el formualrio fue enviado
+   */
   submitted = false;
 
+  /**
+   * Constructor del componente
+   * @param fb Servicio FormBuilder para crear el formulario
+   */
   constructor(private fb: FormBuilder) {
     this.formAccount = this.fb.group({
       nombreCompleto: ['Mauricio Tapia Ortega', [Validators.required, Validators.minLength(4)]],
@@ -30,13 +39,13 @@ export class MyAccountComponent {
 
   /**
    * Envío de formulario
+   * Valida los campos y muestra notificaciones usando SweetAlert2
    */
   onSubmit(): void {
 
     this.submitted = true;
     this.formAccount.markAllAsTouched();
 
-    /** Valida si se han ingresado los campos */
     if (this.formAccount.invalid) {
       Swal.fire({
         title: 'Por favor completa todos los campos requeridos',
@@ -55,7 +64,6 @@ export class MyAccountComponent {
       return;
     }
 
-    /** Muestra un mesaje al usuario de registro existoso */
     Swal.fire({
       icon: 'success',
       title: 'Cuenta Actualizada',

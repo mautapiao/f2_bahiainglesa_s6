@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de restaurantes recomendados en la página principal.
+ * Interface que representa un tour destacado mostrado en la sección principal
  */
 interface Tour {
   /** Titulo para el tour o nombre de la empresa */
   titulo: string;
   /** Detalle básico del tour ofrecido */
   detalle: string;
-  /** Clase para icono FontAwesome */
+  /** Clase CSS del ícono FontAwesome */
   icono: string;
 }
-
+/**
+ * Componente que muestra la sección de tours destacados en la página principal
+ */
 @Component({
   selector: 'app-tours',
   imports: [CommonModule],
@@ -20,9 +21,7 @@ interface Tour {
   styleUrl: './tours.component.scss'
 })
 export class ToursComponent {
-  /**
-   * Lista de tours destacados para mostrar.
-   */
+  /** Lista de tours destacados para mostrar */
   tours: Tour[] = [
     {
       titulo: 'GeoTurismo Atacama',
@@ -41,5 +40,4 @@ export class ToursComponent {
       icono: 'fa-regular fas fa-camera',
     }
   ];
-
 }

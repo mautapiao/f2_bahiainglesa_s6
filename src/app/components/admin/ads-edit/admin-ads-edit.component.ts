@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 /**
  * Representa la sección de edición de categorías
+ * Las propiedades de esta interfaz están escritas en inglés para seguir buenas prácticas,
  */
 
 @Component({

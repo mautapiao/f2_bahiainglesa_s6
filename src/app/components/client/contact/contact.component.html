@@ -16,7 +16,7 @@
                             <!-- Nombre -->
                             <div class="mb-3">
                                 <label class="form-label">Nombre</label>
-                                <input type="text" name="nombre" [(ngModel)]="contacto.nombre" required minlength="3"
+                                <input type="text" name="nombre" [(ngModel)]="contact.name" required minlength="3"
                                     class="form-control" #nombreInput="ngModel" >
                                 <div class="text-danger" *ngIf="nombreInput.invalid && nombreInput.touched">
                                     El nombre es obligatorio y debe tener al menos 3 caracteres.
@@ -26,7 +26,7 @@
                             <!-- Email -->
                             <div class="mb-3">
                                 <label class="form-label">Correo</label>
-                                <input type="email" name="email" [(ngModel)]="contacto.email" required
+                                <input type="email" name="email" [(ngModel)]="contact.email" required
                                     class="form-control" #emailInput="ngModel" >
                                 <div class="text-danger" *ngIf="emailInput.invalid && emailInput.touched">
                                     Ingresa un correo válido.
@@ -36,7 +36,7 @@
                             <!-- Mensaje -->
                             <div class="mb-3">
                                 <label class="form-label">Mensaje</label>
-                                <textarea name="mensaje" [(ngModel)]="contacto.mensaje" required class="form-control"
+                                <textarea name="mensaje" [(ngModel)]="contact.menssage" required class="form-control"
                                     #mensajeInput="ngModel" rows="3"></textarea>
                                 <div class="text-danger" *ngIf="mensajeInput.invalid && mensajeInput.touched">
                                     El mensaje es obligatorio.
@@ -51,7 +51,7 @@
                         <!-- Vista previa -->
                         <div class="mt-4">
                             <h5>Datos que serán enviados:</h5>
-                            <pre>{{ contacto | json }}</pre>
+                            <pre>{{ contact | json }}</pre>
                         </div>
                     </div>
 

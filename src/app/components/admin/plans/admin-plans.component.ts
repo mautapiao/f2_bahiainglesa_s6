@@ -1,32 +1,40 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Representa la sección de administración de planes
+ * Interface que representa los valores de los avisos 
  */
-
-/** interfaz para poblar planes */
 interface AdSpot {
+  /** id numerico autoincremento */
   id: number;
+  /** nombre de categoria */
   category: string;
+  /** tamaño publicacion */
   size: string;
+  /** localizacion en pantalla */
   location: string;
+  /** precio diario */
   dailyPrice: string;
+  /** precio semanal */
   weeklyPrice: string;
+  /** precio mensual */
   monthlyPrice: string;
+  /** precio anual */
   annualPrice: string;
+  /** descripcion plan */
   description: string;
 }
-
+/**
+ * Componente que muestra los valores de los planes cliente
+ */
 @Component({
   selector: 'app-admin-plans',
   imports: [RouterModule, CommonModule],
   templateUrl: './admin-plans.component.html',
   styleUrl: './admin-plans.component.scss'
 })
-export class AdminPlansComponent {
 
+export class AdminPlansComponent {
   /** Poblamiento de registros plan */
   adSpots: AdSpot[] = [
     {

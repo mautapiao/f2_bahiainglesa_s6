@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /**
- * Muestra una lista de eventos turísticos destacados de la región.
+ * Interface que representa los eventos destacados  en la sección principal
  */
 interface Evento {
-  imagen: string;       // imagen del evento
-  alt: string;          // descripcion imagen
-  descripcion: string;  // descripocion evento
-  fecha: string;        // fecha del evento
-  fondo?: string;       // color linear de forno
+  /** imgane del evento */
+  imagen: string;    
+  /** descripcion de la imagen */   
+  alt: string;          
+  /** descripcion evento */
+  descripcion: string;  
+  /** fecha evento */
+  fecha: string;        
+  /** fondo linear */
+  fondo?: string;      
 }
-
+/**
+ * Componente que muestra la sección de eventos destacados en la página principal
+ */
 @Component({
   selector: 'app-events',
   imports: [CommonModule],
@@ -18,9 +25,7 @@ interface Evento {
   styleUrl: './events.component.scss'
 })
 export class EventsComponent {
-   /**
-   * Lista de eventos turísticos con su imagen, descripción y fecha.
-   */
+   /** Lista de eventos turísticos con su imagen, descripción y fecha. */
   eventos: Evento[] = [
     {
       imagen: 'img/festival_xii_banner.png',
@@ -36,5 +41,4 @@ export class EventsComponent {
       fondo: 'linear-gradient(135deg, #16A085, #1ABC9C)'
     }
   ];
-  
 }

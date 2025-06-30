@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 /**
- * Area de cliente administración de Ads que ha publicado Ad
- * Las propiedades de esta interfaz están escritas en inglés para seguir buenas prácticas,
+ * Interface que define los ads del cliente
  */
-
-/** Define una interface para los ad */
 interface Ad {
+  /** id numerico auto incremento */
   id: number;
   /** fecha envío (YYYY-MM-DD) */
   sendDate: string; 
@@ -29,7 +26,9 @@ interface Ad {
   /** true = Sí, false = No  */
   paid: boolean;         
 }
-
+/**
+ * Componente que muestra los ads para el cliente
+ */
 @Component({
   selector: 'app-my-ads',
   imports: [RouterModule,CommonModule],
@@ -37,7 +36,6 @@ interface Ad {
   styleUrl: './my-ads.component.scss'
 })
 export class MyAdsComponent {
-
   /** Se ingrean Ad por defecto */
   ads: Ad[] = [
     {
@@ -89,5 +87,4 @@ export class MyAdsComponent {
       paid: true,
     }
   ];
-
 }
