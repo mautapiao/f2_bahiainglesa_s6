@@ -14,7 +14,7 @@ import { UserAdminService } from '../../../services/user-admin.service';
 })
 /**
  * Componente de administración de anuncios (Ads).
- * Muestra una lista de anuncios y permite activar/desactivar cada uno.
+ * Muestra una lista de anuncios y permite activar/desactivar cada uno
  */
 export class AdminUserComponent {
   

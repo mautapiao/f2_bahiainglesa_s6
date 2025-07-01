@@ -13,7 +13,7 @@ interface Ad {
   user: {
     /** nombre de usaurio */
     name: string;
-    /** email usaurio */
+    /** email usuario */
     email: string;
   };
   /** Categoría de anuncio */
@@ -125,6 +125,8 @@ export class AdminAdsComponent {
   * @param ad El anuncio cuyo estado se desea alternar.
   */
   toggleActivo(ad: Ad): void {
+    // Si el anuncio está activo, lo desactiva
+    // Si no está activo, lo activa
     ad.active = !ad.active;
     // Aquí a db para persistir el cambio
   }
